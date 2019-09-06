@@ -13,7 +13,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   bloc: ^0.15.0
   flutter_bloc: ^0.21.0
-
+  zefyr: ^0.6.1
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nozbe_lightweight/presentation/drawer.dart';
 import 'package:nozbe_lightweight/presentation/tasks.dart';
 
 class AppPage extends StatelessWidget {
@@ -19,21 +20,7 @@ class AppPage extends StatelessWidget {
         ],
       ),
       body: Tasks(),
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-            DrawerHeader(
-              child: Text('Header'),
-              decoration: BoxDecoration(
-                color: Colors.blue
-              ),
-            ),
-            ListTile(
-              title: Text('Element 1'),
-            )
-          ],
-        ),
-      ),
+      drawer: NozbeDrawer()
     );
   }
 

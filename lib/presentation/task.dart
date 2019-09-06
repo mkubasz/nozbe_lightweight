@@ -2,23 +2,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'description.dart';
+import 'package:nozbe_lightweight/domain/model/task.dart';
 
 class TaskWidget extends StatefulWidget {
-  String _name = '';
-  TaskWidget(name){
-    _name = name;
+  Task _task;
+  TaskWidget(Task task){
+    _task = task;
   }
   @override
-  _TaskWidgetState createState() => _TaskWidgetState(_name);
+  _TaskWidgetState createState() => _TaskWidgetState(_task);
 }
 
 class _TaskWidgetState extends State<TaskWidget> {
-  String _name = '';
-  _TaskWidgetState(name){
-    _name = name;
+  Task _task;
+  _TaskWidgetState(Task task){
+    _task = task;
   }
-  bool _isFavorited = true;
-  bool _isCompleted = false;
 
 
   @override
@@ -34,13 +33,14 @@ class _TaskWidgetState extends State<TaskWidget> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             IconButton(
-              icon: (_isCompleted ? Icon(Icons.check_circle_outline) : Icon(Icons.check_circle)),
+//              icon: Icon(Icons.check_circle_outline),
+              icon: (this._task.completed ? Icon(Icons.check_circle_outline) : Icon(Icons.check_circle)),
               color: Colors.red[500],
               onPressed: _toggleComplete,
             ),
           Column(
             children: <Widget>[
-              Text(_name),
+              Text(_task.name),
               Description()
             ],
           ),
@@ -51,7 +51,7 @@ class _TaskWidgetState extends State<TaskWidget> {
   }
   void _toggleComplete() {
     setState(() {
-      _isCompleted = !_isCompleted;
+      _task.completed = !_task.completed;
     });
   }
 }

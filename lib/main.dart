@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:nozbe_lightweight/presentation/app.dart';
-
-void main() => runApp(MyApp());
+import 'dart:io' show Platform;
+import 'package:flutter/foundation.dart';
+void main() {
+  // To linux GUI
+  //debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override

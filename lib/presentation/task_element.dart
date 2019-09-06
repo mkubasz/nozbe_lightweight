@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import 'description.dart';
 import 'package:nozbe_lightweight/domain/model/task.dart';
 
-class TaskWidget extends StatefulWidget {
+class TaskElement extends StatefulWidget {
   Task _task;
-  TaskWidget(Task task){
+  TaskElement(Task task){
     _task = task;
   }
   @override
   _TaskWidgetState createState() => _TaskWidgetState(_task);
 }
 
-class _TaskWidgetState extends State<TaskWidget> {
+class _TaskWidgetState extends State<TaskElement> {
   Task _task;
   _TaskWidgetState(Task task){
     _task = task;

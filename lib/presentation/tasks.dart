@@ -20,7 +20,7 @@ class Tasks extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return Container(
             height: 50,
-            child: Container(child: TaskWidget(tasks[index]))
+            child: Container(child: TaskElement(tasks[index]))
           );
         }
     );

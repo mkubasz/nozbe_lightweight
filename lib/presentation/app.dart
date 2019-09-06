@@ -2,6 +2,7 @@ import 'dart:collection';
 
 import 'package:flutter/material.dart';
 import 'package:nozbe_lightweight/domain/model/task.dart';
+import 'package:nozbe_lightweight/presentation/drawer.dart';
 import 'package:nozbe_lightweight/presentation/tasks.dart';
 
 class AppPageWdidget extends StatefulWidget {
@@ -35,31 +36,7 @@ class AppPage extends State<AppPageWdidget> {
         ],
       ),
       body: Tasks(tasks),
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-            DrawerHeader(
-              child: Text('Nozbe4'),
-              decoration: BoxDecoration(
-                color: Colors.blue
-              ),
-            ),
-            ListTile(
-              title: Text('Element 1'),
-              onTap: (){
-                print('Element1');
-              },
-
-            ),
-            ListTile(
-              title: Text('Element 2'),
-              onTap: (){
-                print('Element2');
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: NozbeDrawer()
     );
   }
 

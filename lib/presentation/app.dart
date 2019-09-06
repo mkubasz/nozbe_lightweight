@@ -23,14 +23,24 @@ class AppPage extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             DrawerHeader(
-              child: Text('Header'),
+              child: Text('Nozbe4'),
               decoration: BoxDecoration(
                 color: Colors.blue
               ),
             ),
             ListTile(
               title: Text('Element 1'),
-            )
+              onTap: (){
+                print('Element1');
+              },
+
+            ),
+            ListTile(
+              title: Text('Element 2'),
+              onTap: (){
+                print('Element2');
+              },
+            ),
           ],
         ),
       ),

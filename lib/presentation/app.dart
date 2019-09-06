@@ -11,12 +11,11 @@ class AppPageWdidget extends StatefulWidget {
 }
 
 class AppPage extends State<AppPageWdidget> {
-  HashMap tasks = new HashMap<int, Task>();
-  AppPage(){
-    tasks[0] = Task('TODO1', 'Some description',false, false);
-    tasks[1] = Task('TODO2', 'Some 2',true, true);
-    tasks[2] = Task('TODO3', 'Some 3',false, true);
-    tasks[3] = Task('TODO4', 'Get Some4',true, false);
+//  HashMap tasks = new HashMap<int, Task>();
+
+  @override
+  void initState() {
+    super.initState();
   }
 
   @override
@@ -35,7 +34,7 @@ class AppPage extends State<AppPageWdidget> {
           ),
         ],
       ),
-      body: Tasks(tasks),
+      body: Tasks(),
       drawer: NozbeDrawer()
     );
   }

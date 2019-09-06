@@ -34,7 +34,7 @@ class _TaskWidgetState extends State<TaskWidget> {
           children: <Widget>[
             IconButton(
 //              icon: Icon(Icons.check_circle_outline),
-              icon: (this._task.completed ? Icon(Icons.check_circle_outline) : Icon(Icons.check_circle)),
+              icon: (this._task.completed ? Icon(Icons.check_circle) : Icon(Icons.check_circle_outline)),
               color: Colors.red[500],
               onPressed: _toggleComplete,
             ),
@@ -44,7 +44,10 @@ class _TaskWidgetState extends State<TaskWidget> {
               Description()
             ],
           ),
-        IconButton(icon: new Icon(Icons.star)),
+        IconButton(
+          icon: (this._task.favorite ? Icon(Icons.star) : Icon(Icons.star_border)),
+          onPressed: _toggleFavorite,
+        ),
         ],),
       ),
     );
@@ -52,6 +55,11 @@ class _TaskWidgetState extends State<TaskWidget> {
   void _toggleComplete() {
     setState(() {
       _task.completed = !_task.completed;
+    });
+  }
+  void _toggleFavorite() {
+    setState(() {
+      _task.favorite = !_task.favorite;
     });
   }
 }

@@ -22,7 +22,4 @@ class Task {
         'favorite': favorite,
       };
 
-  bool isCompleted(){
-    return this.completed;
-  }
 }

@@ -3,8 +3,8 @@ import 'package:nozbe_lightweight/presentation/app.dart';
 import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart';
 void main() {
-  // To linux GUI
-  //debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
+//   To linux GUI
+  debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
   runApp(MyApp());
 }
 

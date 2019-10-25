@@ -54,11 +54,11 @@ class _TaskElementState extends State<TaskElement> {
               ),
               onPressed: () {
                 setState(() {
-                  this.color =
-                      widget.task.priority.enable ? Colors.purple : Colors.grey;
                   widget.task.priority.enable = !widget.task.priority.enable;
                   BlocProvider.of<DashboardBloc>(context)
                       .add(SetTaskPriority(widget.task));
+                  this.color =
+                      widget.task.priority.enable ? Colors.purple : Colors.grey;
                 });
               },
             ),

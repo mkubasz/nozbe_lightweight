@@ -13,7 +13,8 @@ void main() {
   runApp(MultiBlocProvider(
     providers: [
       BlocProvider<DashboardBloc>(
-        builder: (context) => DashboardBloc(taskRepository: TaskRepository()),
+        builder: (context) => DashboardBloc(taskRepository: TaskRepository())
+          ..add(InitializationEvent()),
       ),
       BlocProvider<ThemeBloc>(
         builder: (context) => ThemeBloc(),

@@ -37,17 +37,18 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
   DashboardBloc({this.taskRepository});
 
   @override
-  DashboardState get initialState =>
-      InitializeState(taskRepository.get(null, null));
+  DashboardState get initialState => InitializeState([]);
 
   @override
   Stream<DashboardState> mapEventToState(DashboardEvent event) async* {
     if (event is InitializationEvent) {
-      yield InitializeState(taskRepository.get(null, null));
+      var tasks = await taskRepository.get(null, null);
+      yield InitializeState(tasks);
       // preparation data db - fetch - update view
     }
     if (event is SetTaskPriority) {
-      var tasks = taskRepository.get(null, null).map((task) {
+      var tasks = await taskRepository.get(null, null);
+      tasks = tasks.map((task) {
         if (task == event.task) {
           task.priority.enable = event.task.priority.enable;
         }

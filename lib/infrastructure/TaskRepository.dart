@@ -8,7 +8,7 @@ import 'package:nozbe_lightweight/domain/UserId.dart';
 import 'package:nozbe_lightweight/domain/Uuid.dart';
 
 class TaskRepository {
-  List<Task> get(TeamMember teamMember, ProjectId projectId) {
+  Future<List<Task>> get(TeamMember teamMember, ProjectId projectId) async {
     List<Task> tasks = [
       Task(
           taskId: TaskId(Uuid(1)),

@@ -3,20 +3,20 @@ import 'package:flutter/material.dart';
 
 import 'comments.dart';
 
-class Task extends StatefulWidget {
+class TaskPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return _Task();
   }
 }
 
-class _Task extends State<Task> {
+class _Task extends State<TaskPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         flexibleSpace: FlexibleSpaceBar(
-        title:  Row(
+          title: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Radio(),
@@ -31,7 +31,7 @@ class _Task extends State<Task> {
               ),
             ],
           ),
-      ),
+        ),
         actions: <Widget>[
           IconButton(
               onPressed: () {
@@ -79,7 +79,9 @@ class _Task extends State<Task> {
                               child: Row(
                                 children: <Widget>[
                                   Icon(Icons.terrain),
-                                  SizedBox(width: 20,),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
                                   Text('Single tasks')
                                 ],
                               ),
@@ -92,7 +94,9 @@ class _Task extends State<Task> {
                               child: Row(
                                 children: <Widget>[
                                   Icon(Icons.assignment),
-                                  SizedBox(width: 20,),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
                                   Text('Section')
                                 ],
                               ),
@@ -113,24 +117,29 @@ class _Task extends State<Task> {
                                     backgroundColor: Colors.amber,
                                     radius: 10,
                                   ),
-                                  SizedBox(width: 20,),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
                                   Text('You')
                                 ],
                               ),
                             ))),
                     Card(
                         child: Container(
-                            width: 150,
-                            height: 40,
-                            child: Center(
-                              child: Row(
-                                children: <Widget>[
-                                  Icon(Icons.class_),
-                                  SizedBox(width: 20,),
-                                  Text('Tags')
-                                ],
-                              ),
-                            ),)),
+                      width: 150,
+                      height: 40,
+                      child: Center(
+                        child: Row(
+                          children: <Widget>[
+                            Icon(Icons.class_),
+                            SizedBox(
+                              width: 20,
+                            ),
+                            Text('Tags')
+                          ],
+                        ),
+                      ),
+                    )),
                   ],
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                 ),
@@ -144,7 +153,9 @@ class _Task extends State<Task> {
                               child: Row(
                                 children: <Widget>[
                                   Icon(Icons.calendar_today),
-                                  SizedBox(width: 20,),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
                                   Text('Due Date')
                                 ],
                               ),
@@ -154,10 +165,12 @@ class _Task extends State<Task> {
                             width: 150,
                             height: 40,
                             child: Center(
-                              child:  Row(
+                              child: Row(
                                 children: <Widget>[
                                   Icon(Icons.alarm),
-                                  SizedBox(width: 20,),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
                                   Text('Remind me')
                                 ],
                               ),

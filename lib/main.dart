@@ -5,6 +5,7 @@ import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart';
 
 import 'domain/bloc/bloc.dart';
+import 'infrastructure/TaskRepository.dart';
 
 void main() {
 //   To linux GUI
@@ -12,7 +13,7 @@ void main() {
   runApp(MultiBlocProvider(
     providers: [
       BlocProvider<DashboardBloc>(
-        builder: (context) => DashboardBloc(),
+        builder: (context) => DashboardBloc(taskRepository: TaskRepository()),
       ),
       BlocProvider<ThemeBloc>(
         builder: (context) => ThemeBloc(),

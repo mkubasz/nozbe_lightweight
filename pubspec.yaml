@@ -5,15 +5,17 @@ version: 1.0.0+1
 
 environment:
   sdk: ">=2.2.0 <3.0.0"
-  flutter: '>=1.9.8-pre.108'
 
 dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^0.1.2
-  bloc: ^0.15.0
-  flutter_bloc: ^0.21.0
-  zefyr: ^0.6.1
+  bloc: ^1.0.0
+  flutter_bloc: ^1.0.0
+  zefyr: ^0.8.0
+  http: any
+  equatable: ^0.6.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
